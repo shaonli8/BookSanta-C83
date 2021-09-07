@@ -40,12 +40,13 @@ export default class NotificationScreen extends Component {
     }
      
     keyExtractor=(item,index)=>index.toString()
+
     renderItem=({item,index})=>{
         return(
            <ListItem 
                 key={index}
                 leftElement={<Icon name="book" type="font-awesome" color="blue"/>}
-                title={item,book_name}
+                title={item,bookName}
                 titleStyle={{color:"black" ,fontWeight:"bold"}}
                 subTitle={item.message}
                 bottomDivider

@@ -25,7 +25,7 @@ export default class BookRequestScreen extends Component{
             "userId":userId,
             "bookName":bookName,
             "reasonToRequest":reasonToRequest,
-            "requestId":requestId
+            "requestId":randomRequestId
         })
         this.setState({
             bookName:"",
@@ -37,26 +37,29 @@ export default class BookRequestScreen extends Component{
     render(){
         return(
             <View style={{flex:1}}>
-                <MyHeader title="REQUEST BOOKS"/>
+                <MyHeader title="REQUEST BOOKS" navigation ={this.props.navigation}/>
                 <KeyboardAvoidingView style={styles.keyBoardStyle}>
                     <TextInput 
                         style={styles.formTextInput}
-                        placeholder="Book Name"
+                        placeholder={"Enter Book Name"}
                         onChangeText={(text)=>{
                             this.setState({
                                 bookName:text
                             })
                         }}
+                        value={this.state.bookName}
                     />
                     <TextInput 
-                        style={styles.formTextInput}
-                        placeholder="REASON FOR REQUESTING THE BOOK"
-                        numberOfLines={3}
+                        style ={[styles.formTextInput,{height:300}]}
+                        multiline
+                        placeholder={"REASON FOR REQUESTING THE BOOK"}
+                        numberOfLines={8}
                         onChangeText={(text)=>{
                             this.setState({
                                 reasonToRequest:text
                             })
                         }}
+                        value ={this.state.reasonToRequest}
                     />
                     <TouchableOpacity 
                     style={styles.button}

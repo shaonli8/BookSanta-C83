@@ -26,12 +26,12 @@ export default class SettingScreen extends Component{
           snapshot.forEach(doc=>{
               var data=doc.data()
               this.setState({
-                  email:data.emailId,
-                  firstName:data.firstName,
-                  lastName:data.lastName,
-                  address:data.address,
-                  contact:data.contact,
-                  docId:doc.id
+                  email : data.emailId,
+                  firstName : data.firstName,
+                  lastName : data.lastName,
+                  address : data.address,
+                  contact : data.contact,
+                  docId : doc.id
               })
           })
       })  

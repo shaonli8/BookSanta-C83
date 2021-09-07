@@ -9,6 +9,7 @@ export default class BookDonateScreen extends Component{
     constructor(){
         super()
         this.state={
+            userId  : firebase.auth().currentUser.email,
             requestedBooksList:[],
         }
         this.requestRef=null
@@ -59,10 +60,11 @@ export default class BookDonateScreen extends Component{
             />
         )
     }
+
     render(){
         return(
             <View style={{flex:1}}>
-                <MyHeader title="DONATE BOOKS"/>
+                <MyHeader title="DONATE BOOKS" navigation ={this.props.navigation}/>
                 <View style={{flex:1}}>
                     {
                         this.state.requestedBooksList.length===0
